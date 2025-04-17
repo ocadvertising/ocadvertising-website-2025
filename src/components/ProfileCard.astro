@@ -1,0 +1,37 @@
+---
+const {
+  firstName,
+  lastName,
+  role,
+  image,
+  color,
+  quote,
+  slug,
+  as = 'div',
+  link = true
+} = Astro.props;
+
+const Tag = as;
+---
+
+<Tag class="profile" style={`background-color: ${color};`} data-roles={role.join('/')}>
+  {link ? (
+    <a href={`/grads/${slug}`} style="text-decoration: none; color: inherit;">
+      <img src={image} alt={`${firstName} ${lastName}`} transition:name={`image-${slug}`} />
+      <div class="name-and-role">
+        <h3 transition:name={`name-${slug}`}>{firstName} {lastName}</h3>
+        <p transition:name={`role-${slug}`}>{role.join(" / ")}</p>
+      </div>
+      <blockquote transition:name={`quote-${slug}`}>{quote}</blockquote>
+    </a>
+  ) : (
+    <>
+      <img src={image} alt={`${firstName} ${lastName}`} transition:name={`image-${slug}`} />
+      <div class="name-and-role">
+        <h3 transition:name={`name-${slug}`}>{firstName} {lastName}</h3>
+        <p transition:name={`role-${slug}`}>{role.join(" / ")}</p>
+      </div>
+      <blockquote transition:name={`quote-${slug}`}>{quote}</blockquote>
+    </>
+  )}
+</Tag>

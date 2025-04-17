@@ -65,9 +65,9 @@ body {
 
 .profiles {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  padding: 2rem;
+  align-items: stretch;
 }
 
 @media (min-width: 768px) {
@@ -105,55 +105,44 @@ body {
   transform: translateY(-4px);
 }
 
-.profile img {
-  width: 100%;
-  height: auto;
-  border-radius: 0;
-  margin-bottom: 1rem;
-}
-
-.profile-layout {
+.profile {
   display: flex;
-  gap: 2rem;
-  padding: 2rem;
-}
-
-.profile-left {
-  flex: 1;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.profile-right {
-  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
   padding: 1.5rem;
+  background-color: var(--bg, #eee);
+  box-sizing: border-box;
+  border-radius: 0; /* or use a radius if you want rounded corners */
 }
 
-.profile-right img {
+.profile-image {
   width: 100%;
   height: auto;
-  border-radius: 0;
-  margin-bottom: 1rem;
+  display: block;
+  object-fit: cover;
 }
 
 .profile-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
 }
 
-.profile-header h2 {
-  margin: 0;
+.profile-layout-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
-.profile-header p {
-  margin: 0;
-}
-
-.profile-right blockquote {
-  font-style: italic;
-  margin-top: 1rem;
+.profile-content {
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .footer {

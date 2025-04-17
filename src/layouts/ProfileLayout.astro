@@ -1,22 +1,20 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import NavBar from '../components/NavBar.astro';
+import ProfileCard from '../components/ProfileCard.astro';
 
 const { content } = Astro.props;
-const { firstName, lastName, role, image, color, quote } = content;
+const slug = `${content.firstName.toLowerCase()}-${content.lastName.toLowerCase()}`;
 ---
 
-<BaseLayout title={`${firstName} ${lastName} – Profile`}>
-  <div class="profile-layout">
-    <div class="profile-left">
+<BaseLayout title={`${content.firstName} ${content.lastName} – Profile`}>
+  <NavBar />
+
+  <main class="profile-layout-grid">
+    <section class="profile-content">
       <slot />
-    </div>
-    <div class="profile-right" style={`background-color: ${color};`}>
-      <img src={image} alt={`${firstName} ${lastName}`} />
-      <div class="profile-header">
-        <h2>{firstName} {lastName}</h2>
-        <p>{role.join(" / ")}</p>
-      </div>
-      <blockquote>"{quote}"</blockquote>
-    </div>
-  </div>
+    </section>
+
+    <ProfileCard {...content} slug={slug} as="section" link={false} />
+  </main>
 </BaseLayout>

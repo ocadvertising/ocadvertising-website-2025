@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import NavBar from '../components/NavBar.astro';
+import ProfileCard from '../components/ProfileCard.astro';
 
 const grads = (await getCollection('grads')).sort((a, b) =>
   a.data.lastName.localeCompare(b.data.lastName)
@@ -33,20 +34,7 @@ const grads = (await getCollection('grads')).sort((a, b) =>
 
     <section class="profiles">
       {grads.map(({ data, slug }) => (
-        <div
-    class="profile"
-    style={`background-color: ${data.color};`}
-    data-roles={data.role.join('/')}
-  >
-        <a href={`/grads/${slug}`} style="text-decoration: none; color: inherit;">
-    <img src={data.image} alt={`${data.firstName} ${data.lastName}`} />
-    <div style="display: flex; justify-content: space-between; align-items:baseline;">
-      <h3>{data.firstName} {data.lastName}</h3>
-      <p>{data.role.join(' / ')}</p>
-    </div>
-    <blockquote>"{data.quote}"</blockquote>
-</a>
-  </div>
+        <ProfileCard {...data} slug={slug} />
 
 ))}
 
@@ -56,31 +44,5 @@ const grads = (await getCollection('grads')).sort((a, b) =>
       &copy; 2025 Your School Name. All rights reserved.
     </footer>
 
-    <script>
-      function toggleFilter(role) {
-        const activeFilters = new Set(
-          JSON.parse(localStorage.getItem('filters') || '[]')
-        );
-        if (activeFilters.has(role)) {
-          activeFilters.delete(role);
-        } else {
-          activeFilters.add(role);
-        }
-        localStorage.setItem('filters', JSON.stringify([...activeFilters]));
-        document.querySelectorAll('.profile').forEach(card => {
-          const roles = card.dataset.roles.split(',');
-          const match = [...activeFilters].every(f => roles.includes(f));
-          card.style.display = activeFilters.size === 0 || match ? '' : 'none';
-        });
-        document.querySelectorAll('.filter button').forEach(btn => {
-          btn.classList.toggle('active', activeFilters.has(btn.dataset.role));
-        });
-      }
-
-      window.addEventListener('DOMContentLoaded', () => {
-        const filters = JSON.parse(localStorage.getItem('filters') || '[]');
-        filters.forEach(role => toggleFilter(role));
-      });
-    </script>
   <script type="module" src="/scripts/filter.js"></script>
 </BaseLayout>

@@ -1,0 +1,24 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import ProfileLayout from '../../layouts/ProfileLayout.astro';
+
+export async function getStaticPaths() {
+  const grads = await getCollection('grads');
+  return grads.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { slug: entry.slug },
+  }));
+}
+
+const { slug } = Astro.props;
+const entry = await getEntry('grads', slug);
+
+if (!entry) throw new Error(`Grad not found: ${slug}`);
+
+const { data, render } = entry;
+const { Content } = await render();
+---
+
+<ProfileLayout content={data}>
+  <Content />
+</ProfileLayout>

@@ -1,0 +1,22 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+const { content } = Astro.props;
+const { firstName, lastName, role, image, color, quote } = content;
+---
+
+<BaseLayout title={`${firstName} ${lastName} – Profile`}>
+  <div class="profile-layout">
+    <div class="profile-left">
+      <slot />
+    </div>
+    <div class="profile-right" style={`background-color: ${color};`}>
+      <img src={image} alt={`${firstName} ${lastName}`} />
+      <div class="profile-header">
+        <h2>{firstName} {lastName}</h2>
+        <p>{role.join(" / ")}</p>
+      </div>
+      <blockquote>"{quote}"</blockquote>
+    </div>
+  </div>
+</BaseLayout>

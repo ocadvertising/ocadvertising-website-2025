@@ -1,0 +1,160 @@
+:root {
+  --color-red: #c73c40;
+  --color-yellow: #dab727;
+  --color-purple: #71356a;
+  --color-green: #137321;
+  --color-pink: #d98982;
+  --color-blue: #3090a6;
+
+  --text-color: #000;
+  --background: #fff;
+  --font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background: var(--background);
+  color: var(--text-color);
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.headline {
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+@media (max-width: 600px) {
+  .headline {
+    font-size: 2.5rem;
+  }
+}
+
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem;
+  justify-content: center;
+}
+
+.filter button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #eee;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.filter button.active {
+  background-color: var(--text-color);
+  color: var(--background);
+}
+
+.profiles {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+}
+
+@media (min-width: 768px) {
+  .profiles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .profiles {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.profile {
+  text-align: center;
+  border-radius: 0;
+  padding: 1.5rem;
+  color: var(--text-color);
+  transition: transform 0.2s ease;
+}
+
+.name-and-role {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.profile:hover {
+  transform: translateY(-4px);
+}
+
+.profile img {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  margin-bottom: 1rem;
+}
+
+.profile-layout {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.profile-left {
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.profile-right {
+  flex: 1;
+  padding: 1.5rem;
+}
+
+.profile-right img {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  margin-bottom: 1rem;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.profile-header h2 {
+  margin: 0;
+}
+
+.profile-header p {
+  margin: 0;
+}
+
+.profile-right blockquote {
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.85rem;
+  color: #666;
+}

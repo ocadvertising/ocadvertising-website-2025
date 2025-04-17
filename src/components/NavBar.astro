@@ -1,0 +1,105 @@
+---
+export interface Props {}
+---
+
+<style>
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1rem 2rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: black;
+    position: relative;
+    padding-bottom: 2px;
+    transition: color 0.2s ease;
+  }
+
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: black;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    color: #555;
+  }
+
+  .nav-links a:hover::after {
+    transform: scaleX(1);
+  }
+
+  .search-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+  }
+
+  .search-input {
+    border: none;
+    border-bottom: 1px solid #000;
+    background: transparent;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.9rem;
+    width: 0;
+    opacity: 0;
+    transition: width 0.3s ease, opacity 0.3s ease;
+    outline: none;
+  }
+
+  .search-wrapper.open .search-input {
+    width: 150px;
+    opacity: 1;
+  }
+
+  .search-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+</style>
+
+<div class="nav">
+  <div class="search-wrapper" id="searchBox">
+    <button class="search-icon" onclick="toggleSearch()">🔍</button>
+    <input
+      type="search"
+      id="searchInput"
+      class="search-input"
+      placeholder="Search..."
+      oninput="filterBySearch(this.value)"
+      onkeydown="handleSearchEnter(event)"
+    />
+  </div>
+  <div class="nav-links">
+    <a href="#">Archive</a>
+    <a href="#">Email</a>
+    <a href="#">Instagram</a>
+  </div>
+</div>

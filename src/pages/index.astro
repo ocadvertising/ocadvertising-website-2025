@@ -1,11 +1,86 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavBar from '../components/NavBar.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const grads = (await getCollection('grads')).sort((a, b) =>
+  a.data.lastName.localeCompare(b.data.lastName)
+);
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title="Meet Our 2025 Grads">
+    <NavBar />
+
+    <section class="hero">
+      <div class="headline">
+        <div>Meet</div>
+        <div>Our</div>
+        <div>2025</div>
+        <div>Grads</div>
+      </div>
+    </section>
+
+    <section class="filter">
+      {[
+        "Creative Director", "Art Director", "Copywriter",
+        "Strategist", "Brand Designer", "Designer", "Artist"
+      ].map(role => (
+        <button type="button" data-role={role} onClick={`toggleFilter('${role}')`}>
+          {role}
+        </button>
+      ))}
+    </section>
+
+    <section class="profiles">
+      {grads.map(({ data, slug }) => (
+        <a href={`/grads/${slug}`} style="text-decoration: none; color: inherit;">
+  <div
+    class="profile"
+    style={`background-color: ${data.color};`}
+    data-roles={data.role.join('/')}
+  >
+    <img src={data.image} alt={`${data.firstName} ${data.lastName}`} />
+    <div style="display: flex; justify-content: space-between; align-items:baseline;">
+      <h3>{data.firstName} {data.lastName}</h3>
+      <p>{data.role.join(' / ')}</p>
+    </div>
+    <blockquote>"{data.quote}"</blockquote>
+  </div>
+</a>
+
+))}
+
+    </section>
+
+    <footer class="footer">
+      &copy; 2025 Your School Name. All rights reserved.
+    </footer>
+
+    <script>
+      function toggleFilter(role) {
+        const activeFilters = new Set(
+          JSON.parse(localStorage.getItem('filters') || '[]')
+        );
+        if (activeFilters.has(role)) {
+          activeFilters.delete(role);
+        } else {
+          activeFilters.add(role);
+        }
+        localStorage.setItem('filters', JSON.stringify([...activeFilters]));
+        document.querySelectorAll('.profile').forEach(card => {
+          const roles = card.dataset.roles.split(',');
+          const match = [...activeFilters].every(f => roles.includes(f));
+          card.style.display = activeFilters.size === 0 || match ? '' : 'none';
+        });
+        document.querySelectorAll('.filter button').forEach(btn => {
+          btn.classList.toggle('active', activeFilters.has(btn.dataset.role));
+        });
+      }
+
+      window.addEventListener('DOMContentLoaded', () => {
+        const filters = JSON.parse(localStorage.getItem('filters') || '[]');
+        filters.forEach(role => toggleFilter(role));
+      });
+    </script>
+  <script type="module" src="/scripts/filter.js"></script>
+</BaseLayout>

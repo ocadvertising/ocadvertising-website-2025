@@ -10,12 +10,26 @@ window.toggleSearch = function () {
 window.handleSearchEnter = function (e) {
   if (e.key === "Enter") {
     e.preventDefault();
-    const filterSection = document.querySelector(".filter");
-    filterSection?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const query = e.target.value.trim().toLowerCase();
+    localStorage.setItem("searchQuery", query);
+
+    if (window.location.pathname === "/") {
+      window.applyFiltersAndSearch();
+
+      const filterSection = document.querySelector(".filter");
+      filterSection?.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      window.location.href = "/";
+    }
   }
 };
 
 window.applyFiltersAndSearch = function () {
+  // only run if we're on a page with multiple profiles and a filter section
+  const filterSection = document.querySelector(".filter");
+  const profileCards = document.querySelectorAll(".profile");
+  if (!filterSection || profileCards.length < 2) return;
+
   const filters = new Set(JSON.parse(localStorage.getItem("filters") || "[]"));
   const query =
     document.getElementById("searchInput")?.value.toLowerCase() || "";
@@ -41,10 +55,32 @@ window.toggleFilter = function (role) {
   window.applyFiltersAndSearch();
 };
 
-window.filterBySearch = function (query) {
+window.filterBySearch = function () {
   window.applyFiltersAndSearch();
 };
 
 window.addEventListener("DOMContentLoaded", () => {
-  window.applyFiltersAndSearch();
+  // Always attach event handling
+  const input = document.getElementById("searchInput");
+  if (input) {
+    input.addEventListener("keydown", window.handleSearchEnter);
+  }
+
+  // Only run filters if on homepage
+  if (window.location.pathname !== "/") return;
+
+  const filters = JSON.parse(localStorage.getItem("filters") || "[]");
+  filters.forEach((role) => window.toggleFilter(role));
+
+  const savedQuery = localStorage.getItem("searchQuery");
+  if (savedQuery) {
+    if (input) input.value = savedQuery;
+    window.applyFiltersAndSearch();
+    localStorage.removeItem("searchQuery");
+
+    const filterSection = document.querySelector(".filter");
+    filterSection?.scrollIntoView({ behavior: "smooth", block: "start" });
+  } else {
+    window.applyFiltersAndSearch();
+  }
 });

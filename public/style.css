@@ -90,6 +90,10 @@ body {
   transition: transform 0.2s ease;
 }
 
+.profile.hidden {
+  display: none !important;
+}
+
 .name-and-role {
   display: flex;
   flex-direction: row;

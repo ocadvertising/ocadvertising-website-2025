@@ -25,8 +25,8 @@ window.applyFiltersAndSearch = function () {
     const name = card.querySelector("h3")?.textContent.toLowerCase() || "";
     const matchesFilter = [...filters].every((f) => roles.includes(f));
     const matchesSearch = name.includes(query);
-    card.style.display =
-      (filters.size === 0 || matchesFilter) && matchesSearch ? "" : "none";
+    const shouldShow = (filters.size === 0 || matchesFilter) && matchesSearch;
+    card.classList.toggle("hidden", !shouldShow);
   });
 
   document.querySelectorAll(".filter button").forEach((btn) => {

@@ -22,7 +22,7 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem; /* Adds breathing room on small screens */
+  padding: 0 1rem;
   box-sizing: border-box;
 }
 
@@ -96,7 +96,7 @@ body {
 .profile {
   display: flex;
   flex-direction: column;
-  height: 450px; /* uniform height */
+  height: 450px;
   width: 100%;
   max-width: 320px;
   background-color: var(--bg, #eee);
@@ -118,16 +118,14 @@ body {
   height: 100%;
   text-decoration: none;
   color: inherit;
-  /* padding-inline: 1.5rem; */
 }
 
-/* Contained image with aspect ratio */
 .profile img {
   width: 100%;
+  max-height: 60%;
   aspect-ratio: 705 / 800;
   object-fit: contain;
   padding-top: 2.5rem;
-  max-height: 60%;
   flex-shrink: 0;
 }
 
@@ -157,7 +155,6 @@ body {
   margin-block: 0;
 }
 
-/* Text fills remaining space */
 .card-inner > p {
   padding: 0 1rem 1rem;
   margin: 0.5rem 0 0;
@@ -179,6 +176,7 @@ body {
   align-items: center;
 }
 
+/* Profile Page Layout */
 .profile-layout-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -187,25 +185,74 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  justify-items: center; /* 👈 this centers grid items horizontally */
 }
 
-@media (min-width: 1024px) {
-  .profile-layout-grid {
-    grid-template-columns: 2fr 1fr;
-  }
-  .profile-layout-grid {
-    justify-content: center;
-    text-align: center;
-  }
-
-  .profile-content {
-    text-align: left;
-  }
+.profile-layout-grid > * {
+  width: 100%;
+  max-width: 700px;
+  margin-inline: auto;
 }
 
 .profile-content {
   font-size: 1rem;
   line-height: 1.6;
+  text-align: left;
+}
+
+.profile-sidebar {
+  width: 100%;
+}
+
+.profile-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+}
+
+@media (min-width: 1024px) {
+  .profile-layout-grid {
+    grid-template-columns: 2fr 1fr;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    align-items: center;
+  }
+
+  .profile-layout-grid > * {
+    max-width: unset;
+    margin-inline: 0;
+  }
+
+  .profile-content {
+    text-align: left;
+  }
+
+  .profile-sidebar {
+    position: sticky;
+    top: 6rem;
+    align-self: start;
+  }
+}
+
+@media (max-width: 1023px) {
+  .profile-layout-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .profile-sidebar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-sidebar > * {
+    width: 100%;
+    max-width: 320px; /* same as .profile card's max-width */
+  }
 }
 
 .footer {

@@ -1,6 +1,4 @@
 ---
-// src/layouts/ProfileLayout.astro
-
 import BaseLayout from './BaseLayout.astro';
 import ProfileCard from '../components/ProfileCard.astro';
 import ProfileLinks from '../components/ProfileLinks.astro';
@@ -15,7 +13,7 @@ const slug = `${content.firstName.toLowerCase()}-${content.lastName.toLowerCase(
       <slot />
     </section>
 
-    <div>
+    <div class="profile-sidebar">
       <ProfileCard {...content} slug={slug} as="section" link={false} />
       <ProfileLinks
         website={content.website}

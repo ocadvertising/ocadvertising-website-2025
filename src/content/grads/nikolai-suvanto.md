@@ -7,4 +7,5 @@ quote: Bookmarking every design resource I come across
 color: "#71356a"
 image: /images/nikolai-suvanto.jpg
 slug: nikolai-suvanto
+website: "https://n-s.work"
 ---

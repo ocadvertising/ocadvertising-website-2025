@@ -1,0 +1,74 @@
+---
+const { website, linkedin, instagram } = Astro.props;
+
+if (!(website || linkedin || instagram)) {
+  return null;
+}
+---
+
+<div class="profile-links">
+  {website && (
+    <a href={website} target="_blank" rel="noopener noreferrer" aria-label="Website">
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+        <line x1="2" y1="12" x2="22" y2="12" />
+        <path d="M12 2c2.21 2.67 3.5 6.04 3.5 10s-1.29 7.33-3.5 10c-2.21-2.67-3.5-6.04-3.5-10s1.29-7.33 3.5-10z" />
+      </svg>
+    </a>
+  )}
+  {linkedin && (
+    <a href={linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 
+        2.76 2.24 5 5 5h14c2.76 0 5-2.24 
+        5-5v-14c0-2.76-2.24-5-5-5zm-11 
+        19h-3v-10h3v10zm-1.5-11.28c-.97 
+        0-1.75-.79-1.75-1.75s.78-1.75 
+        1.75-1.75 1.75.79 
+        1.75 1.75-.78 1.75-1.75 
+        1.75zm13.5 11.28h-3v-5.5c0-1.1-.9-2-2-2s-2 
+        .9-2 2v5.5h-3v-10h3v1.53c.59-.89 
+        1.57-1.53 2.67-1.53 1.93 
+        0 3.5 1.57 3.5 3.5v6.5z"/>
+      </svg>
+    </a>
+  )}
+  {instagram && (
+    <a href={instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M7.75 2h8.5C19.55 2 22 
+        4.45 22 7.75v8.5c0 3.3-2.45 
+        5.75-5.75 5.75h-8.5C4.45 22 2 
+        19.55 2 16.25v-8.5C2 4.45 4.45 
+        2 7.75 2zm0 2C5.68 4 4 5.68 4 
+        7.75v8.5C4 18.32 5.68 20 7.75 
+        20h8.5c2.07 0 3.75-1.68 
+        3.75-3.75v-8.5C20 5.68 18.32 
+        4 16.25 4h-8.5zM12 7a5 5 0 110 
+        10 5 5 0 010-10zm0 2a3 3 0 100 
+        6 3 3 0 000-6zm5.5-2a1 1 0 110 
+        2 1 1 0 010-2z"/>
+      </svg>
+    </a>
+  )}
+</div>
+
+<style>
+  .profile-links {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .profile-links a svg {
+    stroke: currentColor;
+    color: var(--text-color);
+    transition: transform 0.2s ease;
+  }
+
+  .profile-links a:hover svg {
+    transform: scale(1.1);
+    color: var(--color-blue);
+  }
+</style>

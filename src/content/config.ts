@@ -18,6 +18,9 @@ const grads = defineCollection({
     image: z.string(),
     color: z.string().regex(/^#([0-9A-F]{3}){1,2}$/i),
     quote: z.string(),
+    website: z.string().url().optional(), // optional website URL
+    linkedin: z.string().url().optional(),
+    instagram: z.string().url().optional(),
   }),
 });
 

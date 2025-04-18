@@ -9,3 +9,41 @@ image: /images/nikolai-suvanto.jpg
 slug: nikolai-suvanto
 website: "https://n-s.work"
 ---
+
+### Problem
+
+Travelers often experience a sense of disconnection when they enter unfamiliar places, especially when dealing with foreign currencies, local customs, or navigating unknown environments. This can create a feeling of alienation hindering the full enjoyment of travel and exploration.
+
+### Insight
+
+> A better travel experience comes from feeling present and like you belong, whether planning, arriving, or spending money locally. Travel is more enjoyable when it feels seamless, like you’re part of the local culture, rather than just an outsider.
+
+### Solution
+
+Wise's "Pay Like You Belong" campaign highlights the Wise card, designed to eliminate the hassle of foreign currency, helping travelers feel more immersed in the local culture. With seamless payment options, personalized guides, and real-time local integrations, Wise ensures that travelers experience a journey where they truly belong.
+
+![](/media/nikolai-suvanto/subway-3-poster-mock.jpg)
+
+### Phase 1
+
+Your trip starts long before your flight, it's in the planning, the daydreaming, the places you pass through every day. For those already starting their next trip, Wise meets them where they are—right within their everyday commute, ads will be featured in subway stations and billboards along their travel route.
+
+![](/media/nikolai-suvanto/triposter-ooh.jpg)
+![](/media/nikolai-suvanto/traffic-billboard-mock.jpg)
+
+### Phase 2
+
+The next touchpoint happens in travel hubs (airports, train stations, locations of transition) Found there will be travel guides containing ready to activate Wise cards. The local guides will be styled to look like passports, as when traveling most people already have passports and travel documents on their mind. The guides will focus on local lesser known and less crowded locations, places where the atmosphere naturally fosters conversation and connection.
+
+![](/media/nikolai-suvanto/wise-passport-mock.jpg)
+
+### Phase 3
+
+Lastly, Wise will partner up with local shops, cafes, and travel destinations to run point-of-sale executions. As the traveler arrives and starts interacting with the local economy, Wise’s integration becomes evident. Whether it’s purchasing a coffee at a café or grabbing a souvenir from a local shop, Wise comes to life in the everyday, the mundane. No matter where you shop Wise is with you every step.
+
+![](/media/nikolai-suvanto/cash-register-mock.jpeg)
+![](/media/nikolai-suvanto/wise-instore-mock.jpg)
+
+> Wise is more than a payment method—it's your passport to local discoveries. You’re not just travelling, you're connecting to the world around you. When you travel with Wise, you pay like you belong.
+
+![](/media/nikolai-suvanto/atm-skin.jpg)

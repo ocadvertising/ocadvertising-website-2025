@@ -1,6 +1,7 @@
 ---
 const { title = "Grads 2025" } = Astro.props;
 import { ClientRouter } from "astro:transitions";
+import NavBar from "../components/NavBar.astro";
 ---
 
 <!DOCTYPE html>
@@ -13,6 +14,14 @@ import { ClientRouter } from "astro:transitions";
     <ClientRouter />
   </head>
   <body>
-    <slot />
+    <NavBar />
+
+    <slot name="full-bleed" />
+    <div class="wrapper">
+      <slot />
+    </div>
+    <footer class="footer">
+      &copy; 2025 OCADU Advertising. All rights reserved.
+    </footer>
   </body>
 </html>

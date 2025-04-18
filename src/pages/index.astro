@@ -10,17 +10,16 @@ const grads = (await getCollection('grads')).sort((a, b) =>
 ---
 
 <BaseLayout title="Meet Our 2025 Grads">
-    <NavBar />
-
-    <section class="hero">
-      <div class="headline">
-        <div>Meet</div>
-        <div>Our</div>
-        <div>2025</div>
-        <div>Grads</div>
-      </div>
-    </section>
-
+  
+  
+  <section slot="full-bleed" class="hero">
+    <div class="headline">
+      <div>Meet</div>
+      <div>Our</div>
+      <div>2025</div>
+      <div>Grads</div>
+    </div>
+  </section>
     <section class="filter">
       {[
         "Creative Director", "Art Director", "Copywriter",
@@ -37,12 +36,6 @@ const grads = (await getCollection('grads')).sort((a, b) =>
         <ProfileCard {...data} slug={slug} />
 
 ))}
-
     </section>
-
-    <footer class="footer">
-      &copy; 2025 Your School Name. All rights reserved.
-    </footer>
-
   <script type="module" src="/scripts/filter.js"></script>
 </BaseLayout>

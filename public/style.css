@@ -18,6 +18,14 @@ body {
   color: var(--text-color);
 }
 
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem; /* Adds breathing room on small screens */
+  box-sizing: border-box;
+}
+
 .hero {
   height: 100vh;
   display: flex;
@@ -25,6 +33,8 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  background-color: var(--color-red);
+  color: var(--color-yellow);
 }
 
 .headline {

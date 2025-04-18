@@ -2,10 +2,9 @@
 firstName: Nikolai
 lastName: Suvanto
 role:
-- Art Director
+  - Art Director
 quote: Bookmarking every design resource I come across
-color: '#ffffff'
+color: "#71356a"
 image: /images/nikolai-suvanto.jpg
 slug: nikolai-suvanto
 ---
-

@@ -181,12 +181,26 @@ body {
 
 .profile-layout-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr;
   gap: 2rem;
   align-items: start;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .profile-layout-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+  .profile-layout-grid {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .profile-content {
+    text-align: left;
+  }
 }
 
 .profile-content {

@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import NavBar from '../components/NavBar.astro';
 import ProfileCard from '../components/ProfileCard.astro';
 
 const grads = (await getCollection('grads')).sort((a, b) =>

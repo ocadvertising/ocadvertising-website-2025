@@ -137,14 +137,19 @@ body {
   align-items: baseline;
   justify-content: space-between;
   text-align: start;
-  padding: 0 1rem;
   margin-top: 0.5rem;
 }
 
 .card-content {
   display: grid;
   grid-template-rows: 2.5rem 1fr;
-  padding-inline: 1.5rem;
+  padding-inline: 2.5rem;
+}
+
+@media (max-width: 420px) {
+  .card-content {
+    padding-inline: 2rem;
+  }
 }
 
 .name-and-role > p,

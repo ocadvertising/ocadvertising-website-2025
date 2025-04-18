@@ -25,7 +25,6 @@ window.handleSearchEnter = function (e) {
 };
 
 window.applyFiltersAndSearch = function () {
-  // only run if we're on a page with multiple profiles and a filter section
   const filterSection = document.querySelector(".filter");
   const profileCards = document.querySelectorAll(".profile");
   if (!filterSection || profileCards.length < 2) return;
@@ -60,27 +59,32 @@ window.filterBySearch = function () {
 };
 
 window.addEventListener("DOMContentLoaded", () => {
-  // Always attach event handling
   const input = document.getElementById("searchInput");
   if (input) {
     input.addEventListener("keydown", window.handleSearchEnter);
   }
 
-  // Only run filters if on homepage
+  const savedQuery = localStorage.getItem("searchQuery");
+
+  // Always clear query on page load
+  localStorage.removeItem("searchQuery");
+
   if (window.location.pathname !== "/") return;
 
+  // Apply role filters
   const filters = JSON.parse(localStorage.getItem("filters") || "[]");
   filters.forEach((role) => window.toggleFilter(role));
 
-  const savedQuery = localStorage.getItem("searchQuery");
-  if (savedQuery) {
-    if (input) input.value = savedQuery;
-    window.applyFiltersAndSearch();
-    localStorage.removeItem("searchQuery");
+  if (savedQuery && input) {
+    input.value = savedQuery;
+  }
 
-    const filterSection = document.querySelector(".filter");
-    filterSection?.scrollIntoView({ behavior: "smooth", block: "start" });
-  } else {
-    window.applyFiltersAndSearch();
+  window.applyFiltersAndSearch();
+
+  if (savedQuery) {
+    document.querySelector(".filter")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   }
 });

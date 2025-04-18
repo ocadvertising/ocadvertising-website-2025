@@ -1,5 +1,4 @@
 ---
-// src/components/SearchBar.astro
 export interface Props {}
 ---
 
@@ -70,13 +69,13 @@ export interface Props {}
     </svg>
   </button>
   <input
-    type="search"
-    id="searchInput"
-    class="search-input"
-    placeholder="Search..."
-    oninput="window.filterBySearch()"
-    onkeydown="window.handleSearchEnter(event)"
-  />
+  type="search"
+  id="searchInput"
+  class="search-input"
+  placeholder="Search..."
+  onkeydown="window.handleSearchEnter(event)"
+  oninput={Astro.request.url.pathname === '/' ? "window.filterBySearch()" : undefined}
+/>
 </div>
 
 <script>

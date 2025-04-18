@@ -67,7 +67,8 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  align-items: stretch;
+  padding: 2rem;
+  justify-items: center;
 }
 
 @media (min-width: 768px) {
@@ -83,15 +84,41 @@ body {
 }
 
 .profile {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 450px; /* uniform height */
+  width: 100%;
+  max-width: 320px;
+  background-color: var(--bg, #eee);
+  overflow: hidden;
   border-radius: 0;
-  padding: 1.5rem;
-  color: var(--text-color);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
   transition: transform 0.2s ease;
+  color: var(--background);
 }
 
-.profile.hidden {
-  display: none !important;
+.profile:hover {
+  transform: translateY(-4px);
+}
+
+.card-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  /* padding-inline: 1.5rem; */
+}
+
+/* Contained image with aspect ratio */
+.profile img {
+  width: 100%;
+  aspect-ratio: 705 / 800;
+  object-fit: contain;
+  padding-top: 2.5rem;
+  max-height: 60%;
+  flex-shrink: 0;
 }
 
 .name-and-role {
@@ -99,29 +126,36 @@ body {
   flex-direction: row;
   align-items: baseline;
   justify-content: space-between;
+  text-align: start;
+  padding: 0 1rem;
+  margin-top: 0.5rem;
 }
 
-.profile:hover {
-  transform: translateY(-4px);
+.card-content {
+  display: grid;
+  grid-template-rows: 2.5rem 1fr;
+  padding-inline: 1.5rem;
 }
 
-.profile {
+.name-and-role > p,
+.name-and-role > h3 {
+  margin-block: 0;
+}
+
+/* Text fills remaining space */
+.card-inner > p {
+  padding: 0 1rem 1rem;
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  overflow: hidden;
+  flex-grow: 1;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  width: 100%;
-  padding: 1.5rem;
-  background-color: var(--bg, #eee);
-  box-sizing: border-box;
-  border-radius: 0; /* or use a radius if you want rounded corners */
+  align-items: flex-start;
 }
 
-.profile-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
+.profile.hidden {
+  display: none !important;
 }
 
 .profile-header {

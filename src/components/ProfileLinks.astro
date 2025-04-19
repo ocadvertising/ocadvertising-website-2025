@@ -1,12 +1,12 @@
 ---
-const { website, linkedin, instagram } = Astro.props;
+const { website, linkedin, instagram, color } = Astro.props;
 
 if (!(website || linkedin || instagram)) {
   return null;
 }
 ---
 
-<div class="profile-links">
+<div class=`profile-links color-${color}`>
   {website && (
     <a href={website} target="_blank" rel="noopener noreferrer" aria-label="Website">
       <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
@@ -70,6 +70,29 @@ if (!(website || linkedin || instagram)) {
 
   .profile-links a:hover svg {
     transform: scale(1.1);
-    color: var(--color-blue);
   }
+
+  .color-red a:hover svg {
+  color: var(--color-red);
+}
+
+.color-yellow a:hover svg {
+  color: var(--color-yellow);
+}
+
+.color-purple a:hover svg {
+  color: var(--color-purple);
+}
+
+.color-green a:hover svg {
+  color: var(--color-green);
+}
+
+.color-pink a:hover svg {
+  color: var(--color-pink);
+}
+
+.color-blue a:hover svg {
+  color: var(--color-blue);
+}
 </style>

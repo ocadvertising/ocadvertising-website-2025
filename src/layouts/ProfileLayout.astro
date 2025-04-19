@@ -15,11 +15,7 @@ const slug = `${content.firstName.toLowerCase()}-${content.lastName.toLowerCase(
 
     <div class="profile-sidebar">
       <ProfileCard {...content} slug={slug} as="section" link={false} />
-      <ProfileLinks
-        website={content.website}
-        linkedin={content.linkedin}
-        instagram={content.instagram}
-      />
+      
     </div>
   </main>
 </BaseLayout>

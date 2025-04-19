@@ -2,10 +2,9 @@
 firstName: Julia
 lastName: Monteleone
 role:
-- Creative Director
+  - Creative Director
 quote: Only UP from here
-color: '#ffffff'
+color: "purple"
 image: /images/julia-monteleone.jpg
 slug: julia-monteleone
 ---
-

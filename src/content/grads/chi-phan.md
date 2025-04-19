@@ -2,10 +2,9 @@
 firstName: Chi
 lastName: Phan
 role:
-- Brand Designer
+  - Brand Designer
 quote: "Most likely to ask 'what if?' until it turns into 'what\u2019s next?'"
-color: '#137321'
+color: "blue"
 image: /images/chi-phan.jpg
 slug: chi-phan
 ---
-

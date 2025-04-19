@@ -2,10 +2,9 @@
 firstName: Vazgen
 lastName: Gyulkhandanyan
 role:
-- Artist
+  - Artist
 quote: Animal Lover
-color: '#ffffff'
+color: "purple"
 image: /images/vazgen-gyulkhandanyan.jpg
 slug: vazgen-gyulkhandanyan
 ---
-

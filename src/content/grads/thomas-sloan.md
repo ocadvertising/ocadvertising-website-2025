@@ -2,10 +2,9 @@
 firstName: Thomas
 lastName: Sloan
 role:
-- Designer
+  - Designer
 quote: Most likely to write a viral song
-color: '#ffffff'
+color: "pink"
 image: /images/thomas-sloan.jpg
 slug: thomas-sloan
 ---
-

@@ -2,10 +2,9 @@
 firstName: Coco
 lastName: Huo
 role:
-- Art Director
+  - Art Director
 quote: Best dressed just to lie down after
-color: '#ffffff'
+color: "red"
 image: /images/coco-huo.jpg
 slug: coco-huo
 ---
-

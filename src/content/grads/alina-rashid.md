@@ -2,10 +2,9 @@
 firstName: Alina
 lastName: Rashid
 role:
-- Art Director
+  - Art Director
 quote: Most likely to overthink this line
-color: '#dab727'
+color: "yellow"
 image: /images/alina-rashid.jpg
 slug: alina-rashid
 ---
-

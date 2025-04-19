@@ -2,11 +2,10 @@
 firstName: Sarah
 lastName: Chung
 role:
-- Art Director
-- Copywriter
+  - Art Director
+  - Copywriter
 quote: Tyrannically Overthinking
-color: '#3090a6'
+color: "green"
 image: /images/sarah-chung.jpg
 slug: sarah-chung
 ---
-

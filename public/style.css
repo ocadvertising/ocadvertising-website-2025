@@ -1,10 +1,10 @@
 :root {
-  --color-red: #c73c40;
-  --color-yellow: #dab727;
   --color-purple: #71356a;
-  --color-green: #137321;
+  --color-red: #c73c40;
   --color-pink: #d98982;
+  --color-green: #137321;
   --color-blue: #3090a6;
+  --color-yellow: #dab727;
 
   --text-color: #000;
   --background: #fff;

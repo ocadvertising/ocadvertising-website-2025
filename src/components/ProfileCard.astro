@@ -19,7 +19,7 @@ const {
 const Tag = as;
 ---
 
-<Tag class="profile" style={`background-color: ${color};`} data-roles={role.join('/')} transition:name=`bg-${slug}`>
+<Tag class="profile" style={{ backgroundColor: `var(--color-${color})` }} data-roles={role.join('/')} transition:name=`bg-${slug}`>
   {link ? (
     <a href={`/grads/${slug}`} style="text-decoration: none; color: inherit;" class="card-inner">
       <img src={image} alt={`${firstName} ${lastName}`} transition:name={`image-${slug}`} />

@@ -2,10 +2,9 @@
 firstName: Juanita
 lastName: Castro
 role:
-- Art Director
+  - Art Director
 quote: Me in Two Words. Coffee and hugs.
-color: '#ffffff'
+color: "pink"
 image: /images/juanita-castro.jpg
 slug: juanita-castro
 ---
-

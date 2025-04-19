@@ -2,10 +2,9 @@
 firstName: Miki
 lastName: Simkins
 role:
-- Art Director
+  - Art Director
 quote: First in line on the coffee break
-color: '#ffffff'
+color: "red"
 image: /images/miki-simkins.jpg
 slug: miki-simkins
 ---
-

@@ -203,7 +203,8 @@ body {
   width: 100%;
 }
 
-.profile-content img {
+.profile-content img,
+.profile-content iframe {
   max-width: 100%;
   height: auto;
   display: block;

@@ -2,6 +2,8 @@
 import SearchBar from './SearchBar.astro';
 
 export interface Props {}
+const email = 'mailto:ocadvertisingstudents@gmail.com'
+const instagram = 'https://www.instagram.com/ocadvertising25/'
 ---
 
 <style>
@@ -142,8 +144,8 @@ export interface Props {}
   <div class="nav-right">
     <div class="nav-links">
       <a href="#">Archive</a>
-      <a href="#">Email</a>
-      <a href="#">Instagram</a>
+      <a href={email}>Email</a>
+      <a href={instagram}>Instagram</a>
     </div>
     <div class="hamburger" id="hamburger" onclick="window.toggleMobileMenu()">
       <div></div>
@@ -151,8 +153,8 @@ export interface Props {}
     </div>
     <div class="mobile-menu" id="mobileMenu">
       <a href="#">Archive</a>
-      <a href="#">Email</a>
-      <a href="#">Instagram</a>
+      <a href={email}>Email</a>
+      <a href={instagram}>Instagram</a>
     </div>
   </div>
 </div>

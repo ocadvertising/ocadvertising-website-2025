@@ -153,9 +153,20 @@ h1 {
   margin-top: 0.5rem;
 }
 
+.pronouns {
+  text-align: left;
+  line-height: 1.5;
+  margin-block: 0;
+}
+
+.bio {
+  color: var(--text-color);
+  text-align: left;
+}
+
 .card-content {
   display: grid;
-  grid-template-rows: 2.5rem 1fr;
+  grid-template-rows: auto-fit 1.5rem 1fr;
   padding-inline: 2.5rem;
 }
 
@@ -239,10 +250,6 @@ h1 {
   .profile-layout-grid > * {
     max-width: unset;
     margin-inline: 0;
-  }
-
-  .profile-content {
-    text-align: left;
   }
 
   .profile-sidebar {

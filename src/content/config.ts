@@ -21,6 +21,7 @@ const grads = defineCollection({
     website: z.array(z.string().url()).optional(),
     instagram: z.array(z.string().url()).optional(),
     linkedin: z.string().url().optional(),
+    tiktok: z.string().url().optional(),
     pronouns: z.string().optional(),
     bio: z.string().optional(),
   }),

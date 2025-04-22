@@ -2,8 +2,8 @@
 import SearchBar from './SearchBar.astro';
 
 export interface Props {}
-const email = 'mailto:ocadvertisingstudents@gmail.com'
-const instagram = 'https://www.instagram.com/ocadvertising25/'
+const email = 'mailto:ocadvertisingstudents@gmail.com';
+const instagram = 'https://www.instagram.com/ocadvertising25/';
 ---
 
 <style>
@@ -12,8 +12,8 @@ const instagram = 'https://www.instagram.com/ocadvertising25/'
     top: 0;
     z-index: 10;
     background: white;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
     font-size: 0.9rem;
     text-transform: uppercase;
@@ -22,14 +22,32 @@ const instagram = 'https://www.instagram.com/ocadvertising25/'
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
   }
 
+  .nav.scrolled .logo {
+    height: 6vh;
+  }
+
   .nav-left {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+  }
+
+  .nav-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo {
+    height: 10vh;
+    width: auto;
+    transition: height 0.7s ease;
   }
 
   .nav-right {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 1.5rem;
     position: relative;
   }
@@ -134,6 +152,7 @@ const instagram = 'https://www.instagram.com/ocadvertising25/'
     .hamburger {
       display: flex;
     }
+
   }
 </style>
 
@@ -141,6 +160,11 @@ const instagram = 'https://www.instagram.com/ocadvertising25/'
   <div class="nav-left">
     <SearchBar />
   </div>
+
+  <div class="nav-center">
+    <img src="/images/logo.svg" alt="Logo" class="logo" />
+  </div>
+
   <div class="nav-right">
     <div class="nav-links">
       <a href="#">Archive</a>
@@ -160,6 +184,10 @@ const instagram = 'https://www.instagram.com/ocadvertising25/'
 </div>
 
 <script>
+  window.addEventListener("scroll", () => {
+    const nav = document.querySelector(".nav");
+    nav.classList.toggle("scrolled", window.scrollY > 10);
+  });
   window.toggleMobileMenu = function () {
     const menu = document.getElementById("mobileMenu");
     const icon = document.getElementById("hamburger");

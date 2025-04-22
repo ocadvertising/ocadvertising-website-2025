@@ -18,9 +18,11 @@ const grads = defineCollection({
     image: z.string(),
     color: z.enum(["red", "yellow", "purple", "green", "pink", "blue"]),
     quote: z.string(),
-    website: z.string().url().optional(), // optional website URL
+    website: z.array(z.string().url()).optional(),
+    instagram: z.array(z.string().url()).optional(),
     linkedin: z.string().url().optional(),
-    instagram: z.string().url().optional(),
+    pronouns: z.string().optional(),
+    bio: z.string().optional(),
   }),
 });
 

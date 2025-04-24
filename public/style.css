@@ -226,6 +226,14 @@ h1 {
   text-align: left;
 }
 
+.profile-content > p:first-child {
+  margin-top: 0;
+}
+
+.profile-content > p:first-child img {
+  margin-top: 0;
+}
+
 .profile-sidebar {
   width: 100%;
 }

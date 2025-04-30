@@ -7,6 +7,7 @@ quote: Has never looked more serious
 slug: mohammad-khan
 color: "pink"
 image: /images/mohammad-khan.jpg
+pronouns: He/him
 bio: "Mohammad Khan likes writing fun lines. Honestly, he can’t help but use humour where applicable. Though, he keeps his work rooted in storytelling and hopes to spark connection amongst all.
 
 Mohammad Khan chases new experiences. Through conversation, saying “Yes!” and travel, he aims to forever learn about what more the universe has to offer. He (naturally) utilizes these experiences to enrich his copywriting.

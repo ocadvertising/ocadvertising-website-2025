@@ -1,12 +1,12 @@
 ---
-const { website, linkedin, instagram, tiktok, color } = Astro.props;
+const { website, linkedin, instagram, tiktok, youtube, color } = Astro.props;
 
 // Normalize to arrays
 const websites = Array.isArray(website) ? website : website ? [website] : [];
 const instagrams = Array.isArray(instagram) ? instagram : instagram ? [instagram] : [];
 
 // Early return if there's nothing to show
-if (websites.length === 0 && !linkedin && instagrams.length === 0 && !tiktok) {
+if (websites.length === 0 && !linkedin && instagrams.length === 0 && !tiktok && !youtube) {
   return null;
 }
 ---
@@ -33,6 +33,11 @@ if (websites.length === 0 && !linkedin && instagrams.length === 0 && !tiktok) {
   {tiktok && (
     <a href={tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok">
       <i class="fab fa-tiktok" aria-hidden="true"></i>
+    </a>
+  )}
+  {youtube && (
+    <a href={youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+      <i class="fab fa-youtube" aria-hidden="true"></i>
     </a>
   )}
 </div>

@@ -13,11 +13,11 @@ website:
   - "https://cocohuo.format.com/"
 ---
 
-![](/media/coco-huo/1.webp)
-![](/media/coco-huo/2.webp)
-![](/media/coco-huo/3.webp)
-![](/media/coco-huo/4.webp)
-![](/media/coco-huo/5.webp)
-![](/media/coco-huo/6.webp)
-![](/media/coco-huo/7.webp)
-![](/media/coco-huo/8.webp)
+![](/media/coco-huo/1.jpg)
+![](/media/coco-huo/2.jpg)
+![](/media/coco-huo/3.jpg)
+![](/media/coco-huo/4.jpg)
+![](/media/coco-huo/5.jpg)
+![](/media/coco-huo/6.jpg)
+![](/media/coco-huo/7.jpg)
+![](/media/coco-huo/8.jpg)

@@ -23,6 +23,18 @@ h1 {
   font-size: 2rem;
 }
 
+a {
+  text-decoration: underline;
+  color: black;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #444;
+}
+
 .wrapper {
   width: 100%;
   max-width: 1200px;
